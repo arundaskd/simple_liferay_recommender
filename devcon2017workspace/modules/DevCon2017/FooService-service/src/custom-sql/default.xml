@@ -1,0 +1,12 @@
+<custom-sql>
+    <sql id="fooservice.service.persistence.FooFinder.getAllBehaviour">
+    <![CDATA[
+    SELECT cn.value,e.classPK,e.userId,count(*) as c FROM ct_analytics_analyticsevent e 
+    join classname_ cn
+    where 
+    	cn.value not like "com.liferay.portal.kernel.model.Layout" 
+    	and cn.value not like "com.liferay.dynamic.data.lists.model.DDLRecordSet"
+    	and e.eventType like 'view' and e.classnameid=cn.classnameid group by cn.value,e.classPK,e.userId
+    ]]>
+    </sql>
+</custom-sql>

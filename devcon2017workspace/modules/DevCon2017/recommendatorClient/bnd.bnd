@@ -1,0 +1,4 @@
+Bundle-Name: recommendatorClient
+Bundle-SymbolicName: recommendatorClient
+Bundle-Version: 1.0.0
+Export-Package: recommendatorClient.constants
